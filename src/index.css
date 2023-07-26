@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-    @apply bg-slate-50 text-gray-600 px-20 md:px-80;
+    @apply bg-slate-50 text-gray-600 px-10 md:px-80;
 }
 
 .dark {
-    @apply bg-gray-950 text-slate-50;
+    @apply bg-black text-slate-100;
 }

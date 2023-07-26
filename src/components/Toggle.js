@@ -40,7 +40,9 @@ const Toggle = () => {
         <div className="inline-flex items-center gap-5">
             <div
                 onClick={toggleDarkMode}
-                className="relative bg-gray-400 h-5 w-10 rounded-full cursor-pointer"
+                className={`relative h-5 w-10 rounded-full cursor-pointer
+                ${darkMode ? "bg-blue-600" : "bg-gray-400"}
+                tranistion-all duration-300ms`}
             >
                 <span
                     className={`absolute top-[2px] h-4 w-4 bg-white rounded-full transition-all duration-300 ease-in-out

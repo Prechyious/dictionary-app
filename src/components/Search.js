@@ -8,7 +8,8 @@ const Search = ({ searchWord, setSearchWord, handleSearch, error }) => {
                 onSubmit={handleSearch}
             >
                 <input
-                    className="w-full shadow-md px-5 py-2 border bg-transparent text-gray-600 rounded-full focus:outline-none transition-shadow duration-300 focus:shadow-lg placeholder:font-bold"
+                    className="w-full shadow-md px-5 py-2 border bg-transparent dark:text-blue-600 
+                    font-semibold rounded-full focus:outline-none transition-shadow duration-300 focus:shadow-lg placeholder:font-bold"
                     type="text"
                     name="search"
                     id="search"
