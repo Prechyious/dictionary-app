@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPlay, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
+import { FaPlay, FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ResultDisplay = ({ isLoading, searchResult, error, setError, clear }) => {
@@ -14,7 +14,7 @@ const ResultDisplay = ({ isLoading, searchResult, error, setError, clear }) => {
                 const audio = new Audio(phoneticAudioURLs[0]);
                 await audio.play();
             } else {
-                console.error("No valid audio URL found.");
+                setError("No valid audio URL found.");
             }
         } catch (error) {
             setError("Error playing audio");
