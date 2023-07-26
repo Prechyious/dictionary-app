@@ -39,6 +39,11 @@ function App() {
         request();
     };
 
+    const clear = () => {
+        setSearchResult(null);
+        setSearchWord("");
+    };
+
     useEffect(() => {
         document.title = searchWord
             ? `${searchWord} - My Dictionary`
@@ -69,6 +74,7 @@ function App() {
                 error={error}
                 setError={setError}
                 searchResult={searchResult}
+                clear={clear}
             />
         </>
     );

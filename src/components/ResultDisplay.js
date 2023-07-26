@@ -1,8 +1,8 @@
 import React from "react";
-import { FaPlay, FaExternalLinkAlt } from "react-icons/fa";
+import { FaPlay, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const ResultDisplay = ({ isLoading, searchResult, error, setError }) => {
+const ResultDisplay = ({ isLoading, searchResult, error, setError, clear }) => {
     const playAudio = async () => {
         try {
             const phoneticAudioURLs = searchResult?.phonetics?.map(
@@ -35,6 +35,11 @@ const ResultDisplay = ({ isLoading, searchResult, error, setError }) => {
 
     return (
         <div>
+            <div onClick={clear} className="w-full mt-2 relative left-0">
+                <button className="font-semibold -right-0 absolute">
+                    Clear
+                </button>
+            </div>
             <div className="mt-10 inline-flex items-center justify-between w-full">
                 <div>
                     <h1 className="uppercase font-bold text-3xl">
@@ -43,7 +48,9 @@ const ResultDisplay = ({ isLoading, searchResult, error, setError }) => {
 
                     {searchResult?.phonetics && (
                         <p className="font-bold text-blue-400">
-                            {searchResult?.phonetics[1]?.text}
+                            {searchResult?.phonetics[0]?.text
+                                ? searchResult?.phonetics[0]?.text
+                                : searchResult?.phonetics[1]?.text}
                         </p>
                     )}
                 </div>
