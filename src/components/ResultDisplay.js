@@ -33,6 +33,7 @@ const ResultDisplay = ({ isLoading, searchResult, error, setError }) => {
         return null;
     }
 
+    console.log(searchResult.phonetics);
     return (
         <div>
             <div className="mt-10 inline-flex items-center justify-between w-full">
@@ -43,7 +44,7 @@ const ResultDisplay = ({ isLoading, searchResult, error, setError }) => {
 
                     {searchResult?.phonetics && (
                         <p className="font-bold text-blue-400">
-                            {searchResult?.phonetics[0]?.text}
+                            {searchResult?.phonetics[1]?.text}
                         </p>
                     )}
                 </div>
