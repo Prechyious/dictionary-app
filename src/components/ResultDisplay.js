@@ -33,7 +33,6 @@ const ResultDisplay = ({ isLoading, searchResult, error, setError }) => {
         return null;
     }
 
-    console.log(searchResult.phonetics);
     return (
         <div>
             <div className="mt-10 inline-flex items-center justify-between w-full">
