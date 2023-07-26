@@ -13,7 +13,7 @@ const Search = ({ searchWord, setSearchWord, handleSearch, error }) => {
                     type="text"
                     name="search"
                     id="search"
-                    placeholder="Search..."
+                    placeholder="Enter the word to search for"
                     value={searchWord}
                     onChange={(e) => setSearchWord(e.target.value)}
                 />
