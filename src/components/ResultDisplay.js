@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 const ResultDisplay = ({ isLoading, searchResult, error, setError, clear }) => {
     const playAudio = async () => {
         try {
-            const phoneticAudioURLs = searchResult?.phonetics?.map(
+            const phoneticAudioURLs = searchResult?.phonetics?.find(
                 (track) => track.audio
             );
 
-            if (phoneticAudioURLs && phoneticAudioURLs.length > 0) {
+            if (phoneticAudioURLs.audio) {
                 // Use the first phonetic audio URL for playback
-                const audio = new Audio(phoneticAudioURLs[0]);
+                const audio = new Audio(phoneticAudioURLs.audio);
                 await audio.play();
             } else {
                 setError("No valid audio URL found.");
@@ -48,9 +48,7 @@ const ResultDisplay = ({ isLoading, searchResult, error, setError, clear }) => {
 
                     {searchResult?.phonetics && (
                         <p className="font-bold text-blue-400">
-                            {searchResult?.phonetics[0]?.text
-                                ? searchResult?.phonetics[0]?.text
-                                : searchResult?.phonetics[1]?.text}
+                            {searchResult.phonetic}
                         </p>
                     )}
                 </div>
